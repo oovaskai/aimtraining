@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(SoundManager))]
@@ -9,24 +10,23 @@ public abstract class Weapon : MonoBehaviour
 {
     public float weight = 1;
 
-    internal UnityStandardAssets.Characters.FirstPerson.FirstPersonController player;
+    internal FirstPersonController player;
     internal HandController hand;
     internal Animator anim;
     internal SoundManager sound;
     internal CrosshairController crosshair;
 
-    internal string weaponStats;
-    internal string weaponValues;
+    public virtual string weaponStats { get => ""; }
+    public virtual string weaponValues { get => ""; }
+    public virtual string weaponAmmo { get => ""; }
 
-    // Start is called before the first frame update
     public virtual void Start()
     {
-        player = GameObject.Find("FPSController").GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
+        player = GameObject.Find("FPSController").GetComponent<FirstPersonController>();
         hand = transform.parent.GetComponent<HandController>();
         anim = GetComponent<Animator>();
         sound = GetComponent<SoundManager>();
         crosshair = GameObject.Find("HUD").GetComponent<CrosshairController>();
-        InitInventory();
     }
 
     public virtual void Equip()
@@ -45,11 +45,5 @@ public abstract class Weapon : MonoBehaviour
     public virtual void Ready()
     {
         hand.switchingWeapon = false;
-    }
-
-    public virtual void InitInventory()
-    {
-        weaponStats = "";
-        weaponValues = "";
     }
 }

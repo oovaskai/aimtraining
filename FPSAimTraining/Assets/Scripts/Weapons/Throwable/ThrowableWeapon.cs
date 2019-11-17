@@ -8,13 +8,18 @@ public class ThrowableWeapon : Weapon
     public float throwForceY = 2;
     public float torque;
     public GameObject throwedWeapon;
+    Throwable throwable;
 
     public bool armed;
     bool throwed;
     bool arming;
 
+    void Awake()
+    {
+        throwable = throwedWeapon.GetComponent<Throwable>();
+        throwable.SetStats();
+    }
 
-    // Update is called once per frame
     void Update()
     {
         if (PauseMenu.paused)
@@ -39,7 +44,6 @@ public class ThrowableWeapon : Weapon
             throwed = false;
             armed = false;
             arming = false;
-
         }
     }
 
@@ -73,12 +77,9 @@ public class ThrowableWeapon : Weapon
         throwed = false;
     }
 
-    public override void InitInventory()
-    {
-        Throwable t = throwedWeapon.GetComponent<Throwable>();
-        t.SetStats();
+    public override string weaponStats => throwable.throwableStats + "\nWeight";
 
-        weaponStats = t.throwableStats + "\nWeight";
-        weaponValues = t.throwableValues + "\n" + weight.ToString();
-    }
+    public override string weaponValues => throwable.throwableValues + "\n" + weight.ToString();
+
+    public override string weaponAmmo => "∞";
 }

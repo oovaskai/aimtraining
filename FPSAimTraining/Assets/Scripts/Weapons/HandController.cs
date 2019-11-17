@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 
 public class HandController : MonoBehaviour
@@ -18,26 +19,23 @@ public class HandController : MonoBehaviour
     Vector3 initPos;
     Vector3 targetPos;
 
-    UnityStandardAssets.Characters.FirstPerson.FirstPersonController player;
+    FirstPersonController player;
     CrosshairController hud;
     Animator anim;
     Camera cam;
 
     int selectedItem;
 
-    // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("FPSController").GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
+        player = GameObject.Find("FPSController").GetComponent<FirstPersonController>();
         hud = GameObject.Find("HUD").GetComponent<CrosshairController>();
         initPos = transform.localPosition;
         targetPos = initPos;
         anim = GetComponent<Animator>();
         cam = GetComponentInParent<Camera>();
-
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (PauseMenu.paused)
@@ -155,8 +153,7 @@ public class HandController : MonoBehaviour
             {
                 SelectItem(index);
                 return;
-            }
-                
+            }    
         }
     }
 
@@ -167,20 +164,15 @@ public class HandController : MonoBehaviour
             ReleaseAim();
             selectedItem = index;
             switchingWeapon = true;
+
             if (selectedWeapon != null)
             {
-                //selectedWeapon.ReleaseTrigger();
                 selectedWeapon.Stop();
-
                 anim.Play("PutWeaponDown");
             }
-
             else
                 anim.Play("PickWeaponUp");
         }
-        //else if (selectedItem == index && selectedWeapon != null)
-        //    selectedWeapon.Equip();
-        //Debug.Log(selectedWeapon.name);
     }
 
     public void DisableWeapon()

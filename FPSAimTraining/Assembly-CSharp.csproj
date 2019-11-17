@@ -11,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{F4120B9D-A18F-A82F-AF78-9E24BF2A3E25}</ProjectGuid>
+    <ProjectGuid>{6C2E7310-B48D-2D9B-D5DB-026DDA888FA6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -111,23 +111,6 @@
     <Compile Include="Assets\Asset Store\Standard Assets\Utility\WaypointProgressTracker.cs" />
     <Compile Include="Assets\Scripts\DestroyAfterAwake.cs" />
     <Compile Include="Assets\Scripts\FadeInTime.cs" />
-    <Compile Include="Assets\Scripts\HudMenu\AimSlider.cs" />
-    <Compile Include="Assets\Scripts\HudMenu\CrosshairController.cs" />
-    <Compile Include="Assets\Scripts\HudMenu\HealthBar.cs" />
-    <Compile Include="Assets\Scripts\HudMenu\Inventory.cs" />
-    <Compile Include="Assets\Scripts\HudMenu\InvertToggle.cs" />
-    <Compile Include="Assets\Scripts\HudMenu\KillTextAnimation.cs" />
-    <Compile Include="Assets\Scripts\HudMenu\Leaderboard.cs" />
-    <Compile Include="Assets\Scripts\HudMenu\LeaderboardFileManager.cs" />
-    <Compile Include="Assets\Scripts\HudMenu\MainMenu.cs" />
-    <Compile Include="Assets\Scripts\HudMenu\MenuButtons.cs" />
-    <Compile Include="Assets\Scripts\HudMenu\PauseMenu.cs" />
-    <Compile Include="Assets\Scripts\HudMenu\PlayerStats.cs" />
-    <Compile Include="Assets\Scripts\HudMenu\Record.cs" />
-    <Compile Include="Assets\Scripts\HudMenu\SensitivitySlider.cs" />
-    <Compile Include="Assets\Scripts\HudMenu\Settings.cs" />
-    <Compile Include="Assets\Scripts\HudMenu\TimeTrialCountdown.cs" />
-    <Compile Include="Assets\Scripts\HudMenu\TimeTrialEndScreen.cs" />
     <Compile Include="Assets\Scripts\Level\BreakGlass.cs" />
     <Compile Include="Assets\Scripts\Level\Checkpoint.cs" />
     <Compile Include="Assets\Scripts\Level\PracticeRoom.cs" />
@@ -137,6 +120,23 @@
     <Compile Include="Assets\Scripts\Target\MoveTarget.cs" />
     <Compile Include="Assets\Scripts\Target\Target.cs" />
     <Compile Include="Assets\Scripts\Target\TargetTriggerZone.cs" />
+    <Compile Include="Assets\Scripts\UI\AimSlider.cs" />
+    <Compile Include="Assets\Scripts\UI\CrosshairController.cs" />
+    <Compile Include="Assets\Scripts\UI\HealthBar.cs" />
+    <Compile Include="Assets\Scripts\UI\Inventory.cs" />
+    <Compile Include="Assets\Scripts\UI\InvertToggle.cs" />
+    <Compile Include="Assets\Scripts\UI\KillTextAnimation.cs" />
+    <Compile Include="Assets\Scripts\UI\Leaderboard.cs" />
+    <Compile Include="Assets\Scripts\UI\LeaderboardFileManager.cs" />
+    <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\UI\MenuButtons.cs" />
+    <Compile Include="Assets\Scripts\UI\PauseMenu.cs" />
+    <Compile Include="Assets\Scripts\UI\PlayerStats.cs" />
+    <Compile Include="Assets\Scripts\UI\Record.cs" />
+    <Compile Include="Assets\Scripts\UI\SensitivitySlider.cs" />
+    <Compile Include="Assets\Scripts\UI\Settings.cs" />
+    <Compile Include="Assets\Scripts\UI\TimeTrialCountdown.cs" />
+    <Compile Include="Assets\Scripts\UI\TimeTrialEndScreen.cs" />
     <Compile Include="Assets\Scripts\Weapons\Gun\AimDownSight.cs" />
     <Compile Include="Assets\Scripts\Weapons\Gun\BulletProjectile.cs" />
     <Compile Include="Assets\Scripts\Weapons\Gun\EjectShell.cs" />
@@ -157,57 +157,33 @@
     <Compile Include="Assets\Scripts\Weapons\Throwable\ThrowableWeapon.cs" />
     <Compile Include="Assets\Scripts\Weapons\Weapon.cs" />
     <Compile Include="Assets\Scripts\Weapons\WeaponPickup.cs" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
-    <None Include="Assets\Asset Store\3D Models\Props\Weapons\Silencer 5.56\Readme.txt" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\Asset Store\Silencer 5.56\Readme.txt" />
     <None Include="Assets\Asset Store\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
     <None Include="Assets\Asset Store\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
-    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\Asset Store\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\Asset Store\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
-    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\Asset Store\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
     <None Include="Assets\Asset Store\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>E:/Unity/FPSAimTraining2/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>E:/GitHub/aimtraining/FPSAimTraining/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>E:/Unity/FPSAimTraining2/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>E:/Unity/FPSAimTraining2/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>E:/GitHub/aimtraining/FPSAimTraining/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>E:/Unity/FPSAimTraining2/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>E:/GitHub/aimtraining/FPSAimTraining/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>E:/Unity/FPSAimTraining2/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>E:/GitHub/aimtraining/FPSAimTraining/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>E:/Unity/FPSAimTraining2/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>E:/GitHub/aimtraining/FPSAimTraining/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>E:/Unity/FPSAimTraining2/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>E:/Unity/FPSAimTraining2/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>E:/GitHub/aimtraining/FPSAimTraining/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>E:/Unity/FPSAimTraining2/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>E:/GitHub/aimtraining/FPSAimTraining/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.10f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

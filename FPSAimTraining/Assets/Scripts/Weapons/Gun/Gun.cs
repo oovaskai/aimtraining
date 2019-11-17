@@ -23,8 +23,6 @@ public class Gun : Weapon
 
     bool emptyShot;
 
-
-
     void Update()
     {
         if (scanTarget)
@@ -102,22 +100,23 @@ public class Gun : Weapon
 
     }
 
-    public override void InitInventory()
-    {
-        weaponStats = "Damage" + "\n" +
-                "Range" + "\n" +
-                "Firerate" + "\n" +
-                "Weight";
-
-        weaponValues = damage + "\n" +
-                        range + "\n" +
-                        fireRate + "\n" +
-                        weight;
-    }
-
     public override void Ready()
     {
         base.Ready();
         reloading = false;
     }
+
+    public override string weaponStats =>
+            "Damage" + "\n" +
+            "Range" + "\n" +
+            "Firerate" + "\n" +
+            "Weight";
+
+    public override string weaponValues =>
+                        damage + "\n" +
+                        range + "\n" +
+                        fireRate + "\n" +
+                        weight;
+
+    public override string weaponAmmo => ammoCount + " / " + maxAmmo;
 }
